@@ -66,3 +66,12 @@ void mostrarMaterias(const Estudiante& estudiante) {
         cout << "- " << asistencia.materia << endl;
     }
 }
+
+void registrarAsistencia(Estudiante& estudiante, const string& fecha, const string& materia, const string& estado) {
+    // Validar el formato de la fecha
+    if (fecha.size() != 10 || fecha[4] != '-' || fecha[7] != '-') {
+        throw FormatoFechaInvalido();
+    }
+
+    estudiante.asistencias.push_back({fecha, materia, estado});
+}
