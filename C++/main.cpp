@@ -48,3 +48,14 @@ void mostrarEstudiante(const Estudiante& estudiante);
 void agregarMateria(Estudiante& estudiante, const string& materia) {
     estudiante.asistencias.push_back({ "", materia, "" });  // Simplemente agregamos una asistencia con la materia
 }
+
+void eliminarMateria(Estudiante& estudiante, const string& materia) {
+    auto it = find_if(estudiante.asistencias.begin(), estudiante.asistencias.end(),
+                      [&materia](const Asistencia& asistencia) { return asistencia.materia == materia; });
+
+    if (it != estudiante.asistencias.end()) {
+        estudiante.asistencias.erase(it);
+    } else {
+        throw MateriaNoRegistrada();  // Lanzar excepción si la materia no está registrada
+    }
+}
