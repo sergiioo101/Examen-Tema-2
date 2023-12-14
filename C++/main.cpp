@@ -43,3 +43,8 @@ void mostrarMaterias(const Estudiante& estudiante);
 void registrarAsistencia(Estudiante& estudiante, const string& fecha, const string& materia, const string& estado);
 void mostrarAsistencias(const Estudiante& estudiante);
 void mostrarEstudiante(const Estudiante& estudiante);
+
+// Implementación de funciones
+void agregarMateria(Estudiante& estudiante, const string& materia) {
+    estudiante.asistencias.push_back({ "", materia, "" });  // Simplemente agregamos una asistencia con la materia
+}
