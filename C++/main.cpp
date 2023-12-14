@@ -91,3 +91,67 @@ void mostrarEstudiante(const Estudiante& estudiante) {
     mostrarMaterias(estudiante);
     mostrarAsistencias(estudiante);
 }
+
+int main() {
+    // Ejemplo de uso:
+    // Crear un objeto Estudiante
+    Estudiante estudiante1;
+    estudiante1.nombre = "Juan";
+    estudiante1.edad = 20;
+    estudiante1.promedio = 8.5;
+
+    char opcion;
+
+    do {
+        try {
+            // Mostrar menú
+            cout << "\n1. Agregar materia\n";
+            cout << "2. Eliminar materia\n";
+            cout << "3. Registrar asistencia\n";
+            cout << "4. Mostrar información del estudiante\n";
+            cout << "0. Salir\n";
+            cout << "Ingrese la opción: ";
+            cin >> opcion;
+
+            switch (opcion) {
+                case '1': {
+                    string nuevaMateria;
+                    cout << "Ingrese la nueva materia: ";
+                    cin >> nuevaMateria;
+                    agregarMateria(estudiante1, nuevaMateria);
+                    break;
+                }
+                case '2': {
+                    string materiaEliminar;
+                    cout << "Ingrese la materia a eliminar: ";
+                    cin >> materiaEliminar;
+                    eliminarMateria(estudiante1, materiaEliminar);
+                    break;
+                }
+                case '3': {
+                    string fecha, materia, estado;
+                    cout << "Ingrese la fecha de asistencia (formato YYYY-MM-DD): ";
+                    cin >> fecha;
+                    cout << "Ingrese la materia: ";
+                    cin >> materia;
+                    cout << "Ingrese el estado (asistió, falta, tardanza): ";
+                    cin >> estado;
+                    registrarAsistencia(estudiante1, fecha, materia, estado);
+                    break;
+                }
+                case '4':
+                    mostrarEstudiante(estudiante1);
+                    break;
+                case '0':
+                    cout << "Saliendo del programa.\n";
+                    break;
+                default:
+                    cout << "Opción no válida. Intente de nuevo.\n";
+            }
+        } catch (const exception& e) {
+            cerr << "Error: " << e.what() << endl;
+        }
+    } while (opcion != '0');
+
+    return 0;
+}
