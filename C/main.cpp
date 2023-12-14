@@ -73,3 +73,12 @@ void mostrarAsistencias(const struct Estudiante* estudiante) {
                estudiante->asistencias[i].estado);
     }
 }
+
+// Declaración de la función mostrarEstudiante
+void mostrarEstudiante(const struct Estudiante* estudiante) {
+    printf("Nombre: %s\n", estudiante->nombre);
+    printf("Edad: %d\n", estudiante->edad);
+    printf("Promedio: %.2f\n", estudiante->promedio);
+    mostrarMaterias(estudiante);
+    mostrarAsistencias(estudiante);
+}
