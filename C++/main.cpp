@@ -82,3 +82,12 @@ void mostrarAsistencias(const Estudiante& estudiante) {
         cout << "Fecha: " << asistencia.fecha << ", Materia: " << asistencia.materia << ", Estado: " << asistencia.estado << endl;
     }
 }
+
+// Declaración de la función mostrarEstudiante
+void mostrarEstudiante(const Estudiante& estudiante) {
+    cout << "Nombre: " << estudiante.nombre << endl;
+    cout << "Edad: " << estudiante.edad << endl;
+    cout << "Promedio: " << estudiante.promedio << endl;
+    mostrarMaterias(estudiante);
+    mostrarAsistencias(estudiante);
+}
