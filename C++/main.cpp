@@ -27,3 +27,11 @@ public:
         return "Error: Materia no registrada.";
     }
 };
+
+// Definición de la estructura Estudiante
+struct Estudiante {
+    string nombre;
+    int edad;
+    float promedio;
+    vector<Asistencia> asistencias; // Vector de asistencias del estudiante
+};
