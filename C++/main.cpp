@@ -59,3 +59,10 @@ void eliminarMateria(Estudiante& estudiante, const string& materia) {
         throw MateriaNoRegistrada();  // Lanzar excepción si la materia no está registrada
     }
 }
+
+void mostrarMaterias(const Estudiante& estudiante) {
+    cout << "Materias inscritas:" << endl;
+    for (const Asistencia& asistencia : estudiante.asistencias) {
+        cout << "- " << asistencia.materia << endl;
+    }
+}
