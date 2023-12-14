@@ -55,3 +55,11 @@ void mostrarMaterias(const struct Estudiante* estudiante) {
         printf("- %s\n", estudiante->asistencias[i].materia);
     }
 }
+
+void registrarAsistencia(struct Estudiante* estudiante, const char* fecha, const char* materia, const char* estado) {
+    // Asumimos que hay suficiente espacio en el array de asistencias
+    strcpy(estudiante->asistencias[estudiante->numAsistencias].fecha, fecha);
+    strcpy(estudiante->asistencias[estudiante->numAsistencias].materia, materia);
+    strcpy(estudiante->asistencias[estudiante->numAsistencias].estado, estado);
+    estudiante->numAsistencias++;
+}
