@@ -75,3 +75,10 @@ void registrarAsistencia(Estudiante& estudiante, const string& fecha, const stri
 
     estudiante.asistencias.push_back({fecha, materia, estado});
 }
+
+void mostrarAsistencias(const Estudiante& estudiante) {
+    cout << "Asistencias de " << estudiante.nombre << ":" << endl;
+    for (const Asistencia& asistencia : estudiante.asistencias) {
+        cout << "Fecha: " << asistencia.fecha << ", Materia: " << asistencia.materia << ", Estado: " << asistencia.estado << endl;
+    }
+}
