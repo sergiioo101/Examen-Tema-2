@@ -11,3 +11,11 @@ struct Asistencia {
     string materia;
     string estado; // Puede ser "asistió", "falta" o "tardanza"
 };
+
+// Excepción personalizada para errores de formato de fecha
+class FormatoFechaInvalido : public exception {
+public:
+    const char* what() const noexcept override {
+        return "Error: Formato de fecha inválido.";
+    }
+};
