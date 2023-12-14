@@ -35,3 +35,11 @@ struct Estudiante {
     float promedio;
     vector<Asistencia> asistencias; // Vector de asistencias del estudiante
 };
+
+// Declaración de funciones
+void agregarMateria(Estudiante& estudiante, const string& materia);
+void eliminarMateria(Estudiante& estudiante, const string& materia);
+void mostrarMaterias(const Estudiante& estudiante);
+void registrarAsistencia(Estudiante& estudiante, const string& fecha, const string& materia, const string& estado);
+void mostrarAsistencias(const Estudiante& estudiante);
+void mostrarEstudiante(const Estudiante& estudiante);
