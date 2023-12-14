@@ -19,3 +19,11 @@ public:
         return "Error: Formato de fecha inválido.";
     }
 };
+
+// Excepción personalizada para materias no registradas
+class MateriaNoRegistrada : public exception {
+public:
+    const char* what() const noexcept override {
+        return "Error: Materia no registrada.";
+    }
+};
