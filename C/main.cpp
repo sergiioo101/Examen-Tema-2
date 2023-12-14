@@ -44,3 +44,7 @@ void eliminarMateria(struct Estudiante* estudiante, const char* materia) {
             return;
         }
     }
+
+    // Mostrar un mensaje si la materia no está registrada
+    fprintf(stderr, "Error: Materia no registrada.\n");
+}
